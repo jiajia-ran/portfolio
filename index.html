@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>冉佳佳 · 懂财务逻辑的业务型选手</title>
+<title>冉佳佳 Ran Jiajia · Portfolio</title>
 <meta name="description" content="冉佳佳的个人作品集。会计专业出身，用数据看懂生意，用沟通与方案推动落地。市场策划 / 品牌运营 / 业务运营方向求职。">
 <style>
 :root{
-  --ink:#1c2523;
-  --ink-soft:#41504c;
-  --paper:#faf7f2;
-  --paper-2:#f2ece3;
-  --line:#ddd4c6;
-  --accent:#c8563a;
-  --accent-deep:#a8432c;
+  --ink:#1f2530;
+  --ink-soft:#525863;
+  --ink-faint:#8a909b;
+  --paper:#f7f4ee;
+  --paper-2:#efe9df;
+  --white:#ffffff;
+  --line:#e0d9cd;
+  --line-2:#d3cabb;
+  --accent:#b1563b;
+  --accent-deep:#963f28;
   --green:#1f3d3a;
-  --green-soft:#2f5a55;
-  --white:#fffdfa;
-  --maxw:1120px;
+  --green-2:#2c534e;
+  --maxw:1180px;
   --serif:"Georgia","Songti SC","Noto Serif SC","Source Han Serif SC",serif;
-  --sans:"Helvetica Neue","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  --sans:"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -30,75 +32,65 @@ body{
   line-height:1.75;
   -webkit-font-smoothing:antialiased;
   font-size:16px;
+  overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-.narrow{max-width:820px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 36px}
 
 /* ---------- nav ---------- */
-header.nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(250,247,242,.92);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-weight:700;letter-spacing:.06em;font-size:15px}
-.brand span{color:var(--accent)}
-.nav-links{display:flex;gap:26px;font-size:14px}
-.nav-links a{color:var(--ink-soft);position:relative;transition:color .2s}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .25s}
+header.nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .4s,box-shadow .4s}
+header.nav.solid{background:rgba(247,244,238,.92);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.nav-mark .dia{color:var(--accent);font-size:12px}
+.nav-links{display:flex;gap:30px;font-size:14.5px}
+.nav-links a{color:var(--ink-soft);position:relative;padding-bottom:3px;transition:color .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--accent);transition:width .3s}
+.nav-links a:hover{color:var(--ink)}
 .nav-links a:hover::after{width:100%}
-.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;font-size:20px;padding:4px 10px;cursor:pointer}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang-toggle{display:flex;align-items:center;border:1px solid var(--line-2);border-radius:100px;padding:3px;font-size:12.5px}
+.lang-toggle button{border:0;background:transparent;color:var(--ink-faint);font-family:inherit;font-size:12.5px;padding:4px 12px;border-radius:100px;cursor:pointer;transition:all .25s;font-weight:600}
+.lang-toggle button.on{background:var(--green);color:#fff}
+.nav-menu-btn{display:none;border:1px solid var(--line-2);background:none;border-radius:8px;font-size:18px;padding:3px 10px;cursor:pointer;color:var(--ink)}
 
-/* ---------- section base ---------- */
-section{padding:96px 0}
-.sec-label{
-  font-size:12px;letter-spacing:.22em;color:var(--accent);
-  font-weight:700;text-transform:uppercase;margin-bottom:18px;
-  display:flex;align-items:center;gap:12px;
-}
-.sec-label::before{content:"";width:32px;height:1px;background:var(--accent)}
-h2.sec-title{font-family:var(--serif);font-size:38px;line-height:1.25;font-weight:700;letter-spacing:.01em;margin-bottom:20px}
-.sec-intro{color:var(--ink-soft);font-size:17px;max-width:720px}
+/* ---------- section frame ---------- */
+section{padding:110px 0}
+.sec-head{max-width:760px;margin-bottom:52px}
+.sec-index{font-family:var(--serif);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:600}
+.sec-title{font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);line-height:1.2;font-weight:700;letter-spacing:-.01em}
+.sec-intro{color:var(--ink-soft);font-size:16.5px;max-width:640px;margin-top:18px}
 
-/* ---------- hero (video background) ---------- */
-.hero{padding:0;background:#0a0d0c;position:relative;overflow:hidden}
+/* ---------- hero ---------- */
+.hero{padding:0;background:#0a0d0c;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0a0d0c}
 .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,12,11,.95) 0%,rgba(9,12,11,.88) 36%,rgba(9,12,11,.55) 64%,rgba(9,12,11,.3) 100%)}
-.hero-inner{position:relative;z-index:2;padding:132px 0 120px}
-.hero-grid{display:grid;grid-template-columns:1.3fr .85fr;gap:64px;align-items:center}
-.hero h1{font-family:var(--serif);font-size:48px;line-height:1.22;font-weight:700;letter-spacing:.005em;margin-bottom:24px;color:#fff}
-.hero h1 .hl{color:#f0a17f;font-style:italic}
-.hero h1 .nb{white-space:nowrap}
-.hero .tagline{font-size:19px;color:#cdd8d4;max-width:560px;margin-bottom:14px}
-.hero .hero-eyebrow{font-size:13.5px;letter-spacing:.16em;color:#c9a596;font-weight:700;text-transform:uppercase;margin-bottom:18px}
-.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 26px;border-radius:4px;font-size:15px;font-weight:600;
-  transition:all .22s;border:1px solid transparent;cursor:pointer;
-}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,11,10,.94) 0%,rgba(8,11,10,.84) 40%,rgba(8,11,10,.5) 70%,rgba(8,11,10,.32) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding:140px 0 90px}
+.hero-grid{display:grid;grid-template-columns:1.32fr .82fr;gap:60px;align-items:end}
+.hero-eyebrow{font-size:13.5px;letter-spacing:.04em;color:#c9a596;margin-bottom:24px}
+.hero h1{font-family:var(--serif);font-size:clamp(34px,4.8vw,60px);line-height:1.14;font-weight:700;letter-spacing:-.015em;margin-bottom:26px;color:#fff}
+.hero h1 .em{font-style:italic;color:#f0a17f}
+.hero .tagline{font-size:17px;color:#cdd8d4;max-width:560px;margin-bottom:12px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:3px;font-size:15px;font-weight:600;transition:all .3s;border:1px solid transparent;cursor:pointer}
 .btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:#d9674a;transform:translateY(-2px)}
-.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;background:transparent}
+.btn-primary:hover{background:#c05f42;transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
 .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn .arw{transition:transform .3s}
+.btn:hover .arw{transform:translate(3px,-3px)}
 .hero-visual{position:relative}
-.hero-card{
-  background:rgba(255,253,250,.08);border:1px solid rgba(255,255,255,.18);border-radius:8px;
-  padding:30px 28px;backdrop-filter:blur(6px);
-}
-.hero-card .q{font-family:var(--serif);font-size:18.5px;line-height:1.8;color:#eef3f1;font-style:italic}
-.hero-card .q-author{font-size:13px;color:#a9c1bb;margin-top:14px;letter-spacing:.05em}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);border-radius:8px;overflow:hidden;margin-top:20px}
-.hero-stats .st{background:rgba(18,26,24,.55);padding:22px 20px}
-.hero-stats .st b{display:block;font-family:var(--serif);font-size:30px;color:#f0a17f;line-height:1}
-.hero-stats .st small{font-size:12.5px;color:#c3d2cd;letter-spacing:.03em}
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:5px;padding:28px 26px;backdrop-filter:blur(6px)}
+.hero-card .q{font-family:var(--serif);font-size:18px;line-height:1.85;color:#eef3f1;font-style:italic}
+.hero-card .q-author{font-size:12.5px;color:#a9c1bb;margin-top:16px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:5px;overflow:hidden;margin-top:16px}
+.hero-stats .st{background:rgba(16,24,22,.5);padding:20px 18px}
+.hero-stats .st b{display:block;font-family:var(--serif);font-size:27px;color:#f0a17f;line-height:1}
+.hero-stats .st small{font-size:11.5px;color:#c3d2cd;display:block;margin-top:8px}
 
-/* Q avatar animation (about decoration only) */
+/* Q avatar */
 .qavatar{position:relative;width:150px;height:150px;animation:floaty 4s ease-in-out infinite}
 .qavatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 14px 22px rgba(31,61,58,.22))}
 .qavatar .eye-open{animation:blinkOpen 5s steps(1,end) infinite}
@@ -107,203 +99,203 @@ h2.sec-title{font-family:var(--serif);font-size:38px;line-height:1.25;font-weigh
 @keyframes blinkOpen{0%,92%{opacity:1}93%,97%{opacity:0}98%,100%{opacity:1}}
 @keyframes blinkClose{0%,92%{opacity:0}93%,97%{opacity:1}98%,100%{opacity:0}}
 .about-wrap{position:relative}
-.about .qavatar-wrap2{position:absolute;right:-10px;top:8px;width:150px}
+.about .qavatar-wrap2{position:absolute;right:0;top:6px;width:150px;z-index:2}
 
 /* ---------- about ---------- */
-.about{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.about-flex{display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.pull{font-family:var(--serif);font-size:24px;line-height:1.6;color:var(--green);border-left:3px solid var(--accent);padding-left:24px;margin:26px 0}
+.about{background:var(--white);border-bottom:1px solid var(--line)}
+.about-flex{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.pull{font-family:var(--serif);font-size:23px;line-height:1.55;color:var(--ink);border-left:3px solid var(--accent);padding-left:26px;margin:28px 0}
 .about p{margin-bottom:18px;color:var(--ink-soft)}
 .about strong{color:var(--ink)}
 .timeline{position:relative;margin-top:8px}
-.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line)}
-.tl-item{position:relative;padding-left:34px;padding-bottom:30px}
+.timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line-2)}
+.tl-item{position:relative;padding-left:36px;padding-bottom:34px}
 .tl-item:last-child{padding-bottom:0}
-.tl-item::before{content:"";position:absolute;left:0;top:6px;width:15px;height:15px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
-.tl-item h4{font-size:16px;margin-bottom:4px}
-.tl-item .tspan{font-size:12.5px;color:var(--accent);letter-spacing:.08em;font-weight:700;text-transform:uppercase}
+.tl-item::before{content:"";position:absolute;left:0;top:7px;width:11px;height:11px;border-radius:50%;background:var(--white);border:1.5px solid var(--accent)}
+.tl-item h4{font-size:16px;margin-bottom:4px;font-weight:600}
+.tl-item .tspan{font-size:11.5px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:700}
 .tl-item p{font-size:14.5px;color:var(--ink-soft);margin:0}
 
 /* ---------- skills ---------- */
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
-.skill{border:1px solid var(--line);border-radius:8px;padding:30px;background:var(--white);transition:all .25s}
-.skill:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 16px 40px -24px rgba(31,61,58,.5)}
-.skill .num{font-family:var(--serif);font-size:15px;color:var(--accent);font-weight:700;letter-spacing:.1em}
-.skill h3{font-size:20px;margin:12px 0 12px;font-family:var(--serif)}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.skill{border-top:1px solid var(--line);padding:34px 0 38px;display:grid;grid-template-columns:60px 1fr;gap:20px}
+.skill .num{font-family:var(--serif);font-size:32px;color:var(--accent);line-height:1;font-weight:700}
+.skill h3{font-family:var(--serif);font-size:21px;margin-bottom:10px;font-weight:700}
 .skill p{font-size:14.5px;color:var(--ink-soft)}
 
-/* ---------- accordion (work / intern / experience) ---------- */
-.acc-list{margin-top:44px;border-top:1px solid var(--line)}
-.acc-row{
-  display:grid;grid-template-columns:120px 1fr 46px;gap:28px;align-items:center;
-  padding:30px 8px;border-bottom:1px solid var(--line);cursor:pointer;
-  transition:background .35s,padding .35s;
-}
-.acc-row:hover{background:var(--white);padding-left:22px;padding-right:22px}
-.acc-row .num{font-family:var(--serif);font-size:15px;color:var(--accent);letter-spacing:.1em;font-weight:700}
+/* ---------- accordion (project / intern / experience) ---------- */
+.acc-list{margin-top:40px;border-top:1px solid var(--line-2)}
+.acc-row{display:grid;grid-template-columns:110px 1fr 46px;gap:28px;align-items:center;padding:32px 10px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .35s,padding .35s;position:relative}
+.acc-row:hover{background:var(--white);padding-left:26px;padding-right:26px}
+.acc-row .num{font-family:var(--serif);font-size:14px;color:var(--ink-faint);font-weight:700}
 .acc-row .ti{min-width:0}
-.acc-row .ti h3{font-family:var(--serif);font-size:25px;line-height:1.25;margin-bottom:6px;transition:color .3s}
+.acc-row .ti h3{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);line-height:1.2;margin-bottom:7px;transition:color .3s;font-weight:700}
 .acc-row:hover .ti h3{color:var(--accent)}
-.acc-row .ti .meta{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);letter-spacing:.03em}
-.acc-row .ti .meta b{color:var(--green);font-weight:600}
-.acc-row .arrow{
-  width:44px;height:44px;border:1px solid var(--line);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--ink-soft);
-  transition:all .35s;justify-self:end;
-}
-.acc-row:hover .arrow{background:var(--green);border-color:var(--green);color:var(--white);transform:rotate(45deg)}
+.acc-row .ti .tags{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft)}
+.acc-row .ti .tags b{color:var(--ink);font-weight:600}
+.acc-row .arrow{width:44px;height:44px;border:1px solid var(--line-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink-soft);transition:all .4s;justify-self:end}
+.acc-row:hover .arrow{background:var(--ink);border-color:var(--ink);color:#fff;transform:rotate(45deg)}
 .acc-row.open .arrow{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
-
-.acc-detail{
-  max-height:0;overflow:hidden;opacity:0;
-  transition:max-height .6s cubic-bezier(.22,.61,.36,1),opacity .45s;
-  background:rgba(255,255,255,.55);
-}
+.acc-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .7s cubic-bezier(.22,.61,.36,1),opacity .5s;background:var(--paper-2)}
 .acc-row.open + .acc-detail{opacity:1}
-.acc-detail-inner{padding:8px 8px 42px}
-.acc-detail .lead-p{font-size:15.5px;color:var(--ink-soft);margin-bottom:20px;max-width:780px}
-.acc-points{margin:0 0 26px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-.acc-points li{position:relative;padding:12px 0 12px 26px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
-.acc-points li b{color:var(--green);font-weight:700}
-.acc-points li::before{content:"→";position:absolute;left:0;top:12px;color:var(--accent);font-weight:700;font-size:13px}
+.acc-detail-inner{padding:10px 10px 46px}
+.acc-detail .lead-p{font-size:15.5px;color:var(--ink-soft);margin-bottom:22px;max-width:820px}
+.acc-points{margin:0 0 26px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.acc-points li{position:relative;padding:13px 0 13px 26px;border-top:1px solid var(--line);font-size:14.5px;color:var(--ink-soft)}
+.acc-points li b{color:var(--ink);font-weight:600}
+.acc-points li::before{content:"→";position:absolute;left:0;top:13px;color:var(--accent);font-weight:700;font-size:13px}
 .acc-gallery{display:grid;gap:14px}
 .acc-gallery.g2{grid-template-columns:1fr 1fr}
 .acc-gallery.g1{grid-template-columns:1fr;max-width:660px}
-.acc-gallery figure{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--paper);cursor:zoom-in}
-.acc-gallery img{width:100%;height:330px;object-fit:cover;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
-.acc-gallery.g1 img{height:auto;object-fit:contain;background:var(--paper)}
+.acc-gallery figure{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white);cursor:zoom-in}
+.acc-gallery img{width:100%;height:330px;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.acc-gallery.g1 img{height:auto;object-fit:contain}
 .acc-gallery figure:hover img{transform:scale(1.05)}
-.acc-gallery figcaption{font-size:12px;color:var(--ink-soft);padding:10px 12px}
+.acc-gallery figcaption{font-size:11.5px;color:var(--ink-faint);padding:10px 12px}
 
-/* work-specific */
-.work{background:var(--paper-2)}
-.intern{background:var(--paper-2)}
-.acc-detail .sec-label{margin:6px 0 16px}
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:14px}
-.metric{background:var(--paper);padding:22px 18px}
+/* work internals */
+.work{background:var(--paper)}
+.intern{background:var(--white)}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:4px;overflow:hidden;margin-bottom:14px}
+.metric{background:var(--white);padding:22px 18px}
 .metric b{font-family:var(--serif);font-size:26px;color:var(--accent-deep);line-height:1.1;display:block}
-.metric small{font-size:12px;color:var(--ink-soft);display:block;margin-top:6px}
-.metric-note{font-size:12px;color:var(--ink-soft);opacity:.75;margin-bottom:32px;font-style:italic}
+.metric small{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:8px}
+.metric-note{font-size:11.5px;color:var(--ink-faint);margin-bottom:32px;font-style:italic}
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.gallery figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper)}
-.gallery img{width:100%;height:190px;object-fit:cover;cursor:zoom-in;transition:transform .3s}
+.gallery figure{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white)}
+.gallery img{width:100%;height:190px;object-fit:cover;cursor:zoom-in;transition:transform .5s}
 .gallery figure:hover img{transform:scale(1.04)}
-.gallery figcaption{font-size:12px;color:var(--ink-soft);padding:9px 12px}
-.highlight-box{background:var(--green);color:var(--paper);border-radius:8px;padding:30px 34px;margin:36px 0 0}
-.highlight-box h4{color:var(--white);font-family:var(--serif);font-size:20px;margin-bottom:12px}
-.highlight-box p{color:#d9e2de;font-size:15px;margin-bottom:10px}
-.highlight-box p:last-child{margin-bottom:0}
-.kv{margin-top:16px}
-.kv dt{font-weight:700;font-size:13px;color:var(--green);letter-spacing:.06em;text-transform:uppercase;margin-top:14px}
-.kv dd{font-size:14.5px;color:var(--ink-soft)}
-.acc-detail .exp-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.acc-detail .exp-imgs figure{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper);cursor:zoom-in}
-.acc-detail .exp-imgs img{width:100%;height:180px;object-fit:cover}
-.acc-detail .exp-imgs figcaption{font-size:11.5px;color:var(--ink-soft);padding:8px 10px}
-.acc-detail > .acc-detail-inner > p{color:var(--ink-soft);font-size:15px;margin-bottom:14px;max-width:820px}
+.gallery figcaption{font-size:11.5px;color:var(--ink-faint);padding:9px 12px}
+.highlight-box{background:var(--green);color:#fff;border-radius:4px;padding:32px 36px;margin:36px 0 0}
+.highlight-box h4{color:#fff;font-family:var(--serif);font-size:20px;margin-bottom:14px}
 .acc-detail .highlight-box p{color:#d9e2de;font-size:15px;margin-bottom:10px}
 .acc-detail .highlight-box h4{color:#fff}
+.kv{margin-top:16px}
+.kv dt{font-weight:700;font-size:12.5px;color:var(--green-2);letter-spacing:.06em;text-transform:uppercase;margin-top:14px}
+.kv dd{font-size:14.5px;color:var(--ink-soft)}
+.acc-detail .exp-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.acc-detail .exp-imgs figure{border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--white);cursor:zoom-in}
+.acc-detail .exp-imgs img{width:100%;height:180px;object-fit:cover}
+.acc-detail .exp-imgs figcaption{font-size:11.5px;color:var(--ink-faint);padding:8px 10px}
+.acc-detail > .acc-detail-inner > p{color:var(--ink-soft);font-size:15px;margin-bottom:14px;max-width:860px}
 
-/* ---------- awards strip ---------- */
+/* ---------- awards ---------- */
 .awards{background:var(--green);color:var(--paper)}
-.awards h2{color:var(--white)}
-.awards .sec-label{color:#e8a58f}
-.awards .sec-label::before{background:#e8a58f}
-.award-list{margin-top:36px;border-top:1px solid rgba(255,255,255,.18)}
-.award-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.14);transition:padding-left .25s}
-.award-row:hover{padding-left:16px}
+.awards .sec-title{color:#fff}
+.awards .sec-index{color:#e8a58f}
+.awards .sec-intro{color:#b8cdc8}
+.award-list{margin-top:20px;border-top:1px solid rgba(255,255,255,.18)}
+.award-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:20px 4px;border-bottom:1px solid rgba(255,255,255,.14);transition:padding-left .3s}
+.award-row:hover{padding-left:18px}
 .award-row .an{font-size:16px;color:#eef3f1}
-.award-row .ad{font-size:13.5px;color:#a9c1bb;display:block;margin-top:3px}
-.award-badge{font-family:var(--serif);font-size:15px;font-weight:700;color:#f0d6c9;white-space:nowrap;border:1px solid rgba(240,214,201,.4);border-radius:3px;padding:5px 12px}
+.award-row .ad{font-size:12.5px;color:#a9c1bb;display:block;margin-top:4px}
+.award-badge{font-size:13px;font-weight:700;color:#f0d6c9;white-space:nowrap;border:1px solid rgba(240,214,201,.4);border-radius:3px;padding:6px 13px}
 .award-badge.gold{background:var(--accent);color:#fff;border-color:var(--accent)}
 
 /* ---------- contact ---------- */
-.contact{text-align:center}
-.contact h2{font-size:42px}
-.contact p.lead{color:var(--ink-soft);font-size:18px;max-width:620px;margin:0 auto 40px}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:820px;margin:0 auto}
-.cc{border:1px solid var(--line);border-radius:8px;padding:28px 20px;background:var(--white)}
-.cc .cl{font-size:12px;letter-spacing:.16em;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:10px}
+.contact{text-align:center;background:var(--white)}
+.contact .sec-title{font-size:clamp(30px,4.4vw,50px)}
+.contact .sec-head{max-width:none}
+.contact p.lead{color:var(--ink-soft);font-size:17px;max-width:620px;margin:0 auto}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:4px;max-width:860px;margin:0 auto;overflow:hidden}
+.cc{background:var(--white);padding:30px 22px;text-align:left}
+.cc .cl{font-size:11.5px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;font-weight:700}
 .cc .cv{font-size:15.5px;color:var(--ink);word-break:break-all}
-.cc .cv small{display:block;font-size:12px;color:var(--ink-soft);margin-top:6px}
-footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:var(--ink-soft);font-size:13px}
+.cc .cv small{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+footer{padding:44px 0;border-top:1px solid var(--line);background:var(--white)}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--ink-faint);flex-wrap:wrap;gap:12px}
 
 /* ---------- lightbox ---------- */
-.lightbox{position:fixed;inset:0;background:rgba(20,28,26,.92);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}
+.lightbox{position:fixed;inset:0;background:rgba(12,18,16,.94);display:none;align-items:center;justify-content:center;z-index:1000;padding:40px}
 .lightbox.on{display:flex}
-.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:6px}
-.lightbox .close{position:absolute;top:24px;right:32px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px}
+.lightbox .close{position:absolute;top:22px;right:30px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
 
+/* ---------- scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+@media print{.reveal{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- responsive ---------- */
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .wrap{padding:0 22px}
+  section{padding:76px 0}
+  .hero-grid{grid-template-columns:1fr;gap:40px;align-items:start}
   .about-flex{grid-template-columns:1fr}
-  .acc-row{grid-template-columns:54px 1fr 40px;gap:14px}
+  .skills-grid{grid-template-columns:1fr}
+  .acc-row{grid-template-columns:52px 1fr 40px;gap:14px}
   .acc-row .ti h3{font-size:20px}
   .acc-points{grid-template-columns:1fr}
   .acc-gallery.g2{grid-template-columns:1fr}
   .acc-gallery.g2 img{height:240px}
-  .skills-grid,.contact-cards{grid-template-columns:1fr}
   .metrics{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr 1fr}
   .acc-detail .exp-imgs{grid-template-columns:1fr}
+  .contact-cards{grid-template-columns:1fr}
   .nav-links{display:none}
-  .menu-btn{display:block}
-  h2.sec-title{font-size:30px}
-  .hero h1{font-size:38px}
-  .hero-stats{grid-template-columns:1fr 1fr}
+  .nav-menu-btn{display:block}
   .about .qavatar-wrap2{display:none}
 }
 @media(max-width:560px){
-  .wrap{padding:0 20px}
-  section{padding:64px 0}
+  .wrap{padding:0 18px}
+  section{padding:58px 0}
   .metrics,.gallery,.acc-detail .exp-imgs{grid-template-columns:1fr}
-  .hero h1{font-size:32px}
 }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <div class="brand">冉佳佳 <span>/</span> Portfolio</div>
+    <div class="nav-mark"><span class="dia">◆</span> 冉佳佳</div>
     <nav class="nav-links">
-      <a href="#about">关于我</a>
-      <a href="#skills">核心能力</a>
-      <a href="#work">项目</a>
-      <a href="#intern">实习</a>
-      <a href="#experience">学生工作</a>
-      <a href="#awards">荣誉</a>
-      <a href="#contact">联系</a>
+      <a href="#about" data-zh="关于我" data-en="About">关于我</a>
+      <a href="#skills" data-zh="核心能力" data-en="Skills">核心能力</a>
+      <a href="#work" data-zh="项目" data-en="Projects">项目</a>
+      <a href="#intern" data-zh="实习" data-en="Internships">实习</a>
+      <a href="#experience" data-zh="学生工作" data-en="Leadership">学生工作</a>
+      <a href="#awards" data-zh="荣誉" data-en="Awards">荣誉</a>
     </nav>
-    <button class="menu-btn" onclick="document.querySelector('.nav-links').scrollIntoView()">☰</button>
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button data-lang="zh" class="on">中</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="nav-menu-btn" onclick="document.querySelector('.nav-links').scrollIntoView()">☰</button>
+    </div>
   </div>
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-bg"><video autoplay muted loop playsinline preload="auto"><source src="assets/hero_bg.mp4" type="video/mp4"></video></div>
   <div class="wrap hero-inner">
     <div class="hero-grid">
     <div>
-      <div class="hero-eyebrow">冉佳佳 · 会计学 · 长江大学 · 2027 届</div>
-      <h1>我能用数据看懂一笔生意，<br>也能用沟通把它<span class="nb"><span class="hl">推进落地</span>。</span></h1>
-      <p class="tagline">会计专业出身，但我不是来做账的。我能搭成本模型、测算利润结构，也能跑一线调研、做品牌策划、统筹活动落地、当众讲清一套方案。</p>
-      <p class="tagline">我最擅长的，是把"数字"翻译成"可执行的动作"，再用沟通推动它发生。</p>
+      <div class="hero-eyebrow" data-zh="冉佳佳 · 会计学 · 长江大学 · 2027 届" data-en="Ran Jiajia · Accounting · Yangtze University · Class of 2027">冉佳佳 · 会计学 · 长江大学 · 2027 届</div>
+      <h1>
+        <span data-zh="我能用数据看懂一笔生意，" data-en="I can read a business through the numbers,">我能用数据看懂一笔生意，</span><br>
+        <span data-zh="也能用沟通把它推进落地。" data-en="and push it into reality through communication.">也能用沟通把它推进落地。</span>
+      </h1>
+      <p class="tagline" data-zh="会计专业出身，但我不是来做账的。我能搭成本模型、测算利润结构，也能跑一线调研、做品牌策划、统筹活动落地、当众讲清一套方案。" data-en="I come from an accounting background — but I am not here to keep books. I can build cost models and forecast profit structures, and I can also run frontline research, craft brand plans, lead events, and pitch a full proposal in front of an audience.">会计专业出身，但我不是来做账的。我能搭成本模型、测算利润结构，也能跑一线调研、做品牌策划、统筹活动落地、当众讲清一套方案。</p>
+      <p class="tagline" data-zh="我最擅长的，是把“数字”翻译成“可执行的动作”，再用沟通推动它发生。" data-en="What I do best is translating numbers into executable actions — and making them happen through communication.">我最擅长的，是把“数字”翻译成“可执行的动作”，再用沟通推动它发生。</p>
       <div class="cta-row">
-        <a href="#work" class="btn btn-primary">查看我的项目 →</a>
-        <a href="#contact" class="btn btn-ghost">联系我索取简历</a>
+        <a href="#work" class="btn btn-primary"><span data-zh="查看我的项目" data-en="View my projects">查看我的项目</span> <span class="arw">↗</span></a>
+        <a href="#contact" class="btn btn-ghost"><span data-zh="联系我索取简历" data-en="Contact me for résumé">联系我索取简历</span> <span class="arw">↗</span></a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
-        <p class="q">"我不是天生外向，是在一次次承担责任、必须站出来解决事情的过程里，慢慢练出主动沟通、临场应对的能力。"</p>
-        <p class="q-author">— 关于我自己的一句实话</p>
+        <p class="q" data-zh="“我不是天生外向，是在一次次承担责任、必须站出来解决事情的过程里，慢慢练出主动沟通、临场应对的能力。”" data-en="“I was not born outgoing. Through taking responsibility again and again — the moments I had to stand up and solve things — I gradually built the ability to communicate proactively and respond on the spot.”">“我不是天生外向，是在一次次承担责任、必须站出来解决事情的过程里，慢慢练出主动沟通、临场应对的能力。”</p>
+        <p class="q-author" data-zh="— 关于我自己的一句实话" data-en="— One honest line about myself">— 关于我自己的一句实话</p>
       </div>
       <div class="hero-stats">
-        <div class="st"><b>国二</b><small>全国企业竞争模拟大赛</small></div>
-        <div class="st"><b>国三</b><small>品牌策划竞赛</small></div>
-        <div class="st"><b>149,812元</b><small>全案预算测算</small></div>
-        <div class="st"><b>零差错</b><small>党员组织关系转接</small></div>
+        <div class="st"><b data-zh="国二" data-en="2nd">国二</b><small data-zh="全国企业竞争模拟大赛" data-en="National Business Simulation Contest">全国企业竞争模拟大赛</small></div>
+        <div class="st"><b data-zh="国三" data-en="3rd">国三</b><small data-zh="品牌策划竞赛" data-en="National Brand Planning Contest">品牌策划竞赛</small></div>
+        <div class="st"><b>¥149,812</b><small data-zh="全案预算测算" data-en="Full-plan budget estimate">全案预算测算</small></div>
+        <div class="st"><b data-zh="零差错" data-en="Zero error">零差错</b><small data-zh="党员组织关系转接" data-en="Party membership transfer">党员组织关系转接</small></div>
       </div>
     </div>
   </div>
@@ -314,38 +306,40 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-wrap">
-    <div class="sec-label">01 · 关于我</div>
+    <div class="sec-head reveal">
+      <div class="sec-index">01 · <span data-zh="关于我" data-en="About">关于我</span></div>
+      <h2 class="sec-title" data-zh="从“做账的人”，到“用账做业务的人”" data-en="From bookkeeping to doing business with the books">从“做账的人”，到“用账做业务的人”</h2>
+    </div>
     <div class="about-flex">
-      <div>
-        <h2 class="sec-title">从"做账的人"，<br>到"用账做业务的人"</h2>
-        <p>我读的是会计，但我很快发现，我真正喜欢的不是把已经发生的事记得清清楚楚，而是<strong>用数据去看未来、去支撑一个决定</strong>。</p>
-        <p>专业课的模拟账务实训里，我连续几天录凭证、对账、调账、找尾差，一整个下午几乎不跟人说话，目标只是把账做平。账调平的那一刻，我没有创造感，只有"完成了一项合规任务"。我心里咯噔一下：<strong>我不想一辈子只做对历史数据的记录者。</strong></p>
-        <p class="pull">做账，是数字的终点；<br>做业务侧的数据支撑，是数字的起点。<br>我想做后者。</p>
-        <p>于是我把方向转到市场和业务运营——不是抛弃专业，而是把财务思维、数据分析、成本意识，<strong>叠加</strong>到业务能力上。这也是我想成为的人：一个懂财务底层逻辑的业务型选手。</p>
+      <div class="reveal">
+        <p data-zh="我读的是会计，但我很快发现，我真正喜欢的不是把已经发生的事记得清清楚楚，而是用数据去看未来、去支撑一个决定。" data-en="I studied accounting, but I soon realized what I truly enjoy is not recording the past precisely, but using data to look forward and support a decision.">我读的是会计，但我很快发现，我真正喜欢的不是把已经发生的事记得清清楚楚，而是<strong>用数据去看未来、去支撑一个决定</strong>。</p>
+        <p data-zh="专业课的模拟账务实训里，我连续几天录凭证、对账、调账、找尾差，一整个下午几乎不跟人说话，目标只是把账做平。账调平的那一刻，我没有创造感，只有“完成了一项合规任务”。我心里咯噔一下：我不想一辈子只做对历史数据的记录者。" data-en="In a simulated bookkeeping workshop, I spent days entering vouchers, reconciling accounts, adjusting entries, and chasing rounding differences — an entire afternoon with barely a word to anyone, just to make the books balance. The moment they balanced, I felt no sense of creation — only that I had completed a compliance task. It hit me: I do not want to spend my life only recording historical data.">专业课的模拟账务实训里，我连续几天录凭证、对账、调账、找尾差，一整个下午几乎不跟人说话，目标只是把账做平。账调平的那一刻，我没有创造感，只有“完成了一项合规任务”。我心里咯噔一下：<strong>我不想一辈子只做对历史数据的记录者。</strong></p>
+        <p class="pull" data-zh="做账，是数字的终点；<br>做业务侧的数据支撑，是数字的起点。<br>我想做后者。" data-en="Bookkeeping is where numbers end.<br>Data support on the business side is where numbers begin.<br>I want to do the latter.">做账，是数字的终点；<br>做业务侧的数据支撑，是数字的起点。<br>我想做后者。</p>
+        <p data-zh="于是我把方向转到市场和业务运营——不是抛弃专业，而是把财务思维、数据分析、成本意识，叠加到业务能力上。这也是我想成为的人：一个懂财务底层逻辑的业务型选手。" data-en="So I pivoted toward marketing and business operations — not abandoning my major, but layering financial thinking, data analysis, and cost awareness onto business skills. This is the person I want to become: a business-minded player who understands the underlying logic of finance.">于是我把方向转到市场和业务运营——不是抛弃专业，而是把财务思维、数据分析、成本意识，<strong>叠加</strong>到业务能力上。这也是我想成为的人：一个懂财务底层逻辑的业务型选手。</p>
       </div>
-      <div style="position:relative">
+      <div class="reveal" style="position:relative">
         <div class="qavatar-wrap2"><div class="qavatar"><img class="eye-open" src="assets/qavatar_open.png" alt=""><img class="eye-blink" src="assets/qavatar_blink.png" alt=""></div></div>
-        <div class="sec-label" style="margin-bottom:14px">成长轨迹</div>
+        <div class="sec-index" style="margin-bottom:16px" data-zh="成长轨迹" data-en="Growth path">成长轨迹</div>
         <div class="timeline">
           <div class="tl-item">
-            <span class="tspan">起点</span>
-            <h4>内向、社恐、怕当众说话</h4>
-            <p>会紧张、下意识想躲，尽量避免主动开口。</p>
+            <span class="tspan" data-zh="起点" data-en="Start">起点</span>
+            <h4 data-zh="内向、社恐、怕当众说话" data-en="Introverted, shy, afraid of public speaking">内向、社恐、怕当众说话</h4>
+            <p data-zh="会紧张、下意识想躲，尽量避免主动开口。" data-en="I would get nervous, instinctively want to hide, and avoid speaking up.">会紧张、下意识想躲，尽量避免主动开口。</p>
           </div>
           <div class="tl-item">
-            <span class="tspan">转折 · 商业竞赛</span>
-            <h4>被推上答辩台</h4>
-            <p>从线下对接陌生人调研，到高强度磨答辩、当众临场应对评委提问，硬生生把自己练出来。</p>
+            <span class="tspan" data-zh="转折 · 商业竞赛" data-en="Turning point · Competition">转折 · 商业竞赛</span>
+            <h4 data-zh="被推上答辩台" data-en="Pushed onto the defense stage">被推上答辩台</h4>
+            <p data-zh="从线下对接陌生人调研，到高强度磨答辩、当众临场应对评委提问，硬生生把自己练出来。" data-en="From approaching strangers for research to intensive defense prep and handling judges' questions live on stage — I trained myself through it.">从线下对接陌生人调研，到高强度磨答辩、当众临场应对评委提问，硬生生把自己练出来。</p>
           </div>
           <div class="tl-item">
-            <span class="tspan">转折 · 学生工作</span>
-            <h4>担任党支部副书记</h4>
-            <p>一次支部大会汇报之后，我能从容接住现场提问、主动引导讨论。那一刻我确认：我不像以前那个害怕社交的我了。</p>
+            <span class="tspan" data-zh="转折 · 学生工作" data-en="Turning point · Leadership">转折 · 学生工作</span>
+            <h4 data-zh="担任党支部副书记" data-en="Deputy Secretary of the Party Branch">担任党支部副书记</h4>
+            <p data-zh="一次支部大会汇报之后，我能从容接住现场提问、主动引导讨论。那一刻我确认：我不像以前那个害怕社交的我了。" data-en="After one branch meeting report, I could calmly take questions and lead the discussion. In that moment I knew: I was no longer the socially anxious version of myself.">一次支部大会汇报之后，我能从容接住现场提问、主动引导讨论。那一刻我确认：我不像以前那个害怕社交的我了。</p>
           </div>
           <div class="tl-item">
-            <span class="tspan">现在</span>
-            <h4>懂数据的业务型选手</h4>
-            <p>用财务能力做判断，用沟通与方案推动落地——这是我想长期深耕的方向。</p>
+            <span class="tspan" data-zh="现在" data-en="Now">现在</span>
+            <h4 data-zh="懂数据的业务型选手" data-en="A business player who speaks data">懂数据的业务型选手</h4>
+            <p data-zh="用财务能力做判断，用沟通与方案推动落地——这是我想长期深耕的方向。" data-en="Judging with financial ability, driving results through communication and proposals — this is the direction I want to grow in long term.">用财务能力做判断，用沟通与方案推动落地——这是我想长期深耕的方向。</p>
           </div>
         </div>
       </div>
@@ -356,29 +350,39 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ SKILLS ============ -->
 <section id="skills">
   <div class="wrap">
-    <div class="sec-label">02 · 核心能力</div>
-    <h2 class="sec-title">我真正擅长的事，<br>都能落到具体的证据上</h2>
-    <p class="sec-intro">我不喜欢用"沟通能力强、抗压能力强"这种空话介绍自己。下面每一条能力，都能在后面的项目里找到对应的场景和结果。</p>
+    <div class="sec-head reveal">
+      <div class="sec-index">02 · <span data-zh="核心能力" data-en="Skills">核心能力</span></div>
+      <h2 class="sec-title" data-zh="我真正擅长的事，都能落到具体的证据上" data-en="Everything I am good at can be anchored to concrete evidence">我真正擅长的事，都能落到具体的证据上</h2>
+      <p class="sec-intro" data-zh="我不喜欢用“沟通能力强、抗压能力强”这种空话介绍自己。下面每一条能力，都能在后面的项目里找到对应的场景和结果。" data-en="I dislike describing myself with empty phrases like “strong communication skills.” Every capability below maps to a real scenario and result in the projects that follow.">我不喜欢用“沟通能力强、抗压能力强”这种空话介绍自己。下面每一条能力，都能在后面的项目里找到对应的场景和结果。</p>
+    </div>
     <div class="skills-grid">
-      <div class="skill">
+      <div class="skill reveal">
         <div class="num">01</div>
-        <h3>数据 → 决策的翻译力</h3>
-        <p>用成本、竞品、客群数据搭模型、算最优解，也能在答辩现场用数据回应专业评委的质疑。数字对我来说不是终点，是支撑决策的起点。</p>
+        <div>
+          <h3 data-zh="数据 → 决策的翻译力" data-en="Translating data into decisions">数据 → 决策的翻译力</h3>
+          <p data-zh="用成本、竞品、客群数据搭模型、算最优解，也能在答辩现场用数据回应专业评委的质疑。数字对我来说不是终点，是支撑决策的起点。" data-en="I build models and find optimal solutions with cost, competitor, and audience data — and defend them live against professional judges. For me, numbers are not the endpoint but the starting point for a decision.">用成本、竞品、客群数据搭模型、算最优解，也能在答辩现场用数据回应专业评委的质疑。数字对我来说不是终点，是支撑决策的起点。</p>
+        </div>
       </div>
-      <div class="skill">
+      <div class="skill reveal">
         <div class="num">02</div>
-        <h3>统筹推进 / 无授权领导</h3>
-        <p>作为党支部副书记，我统筹过大型活动的全流程：设 4 组分工、定时间节点、同步进度，并把它沉淀成一份可复用的 SOP。</p>
+        <div>
+          <h3 data-zh="统筹推进 / 无授权领导" data-en="Coordination & leading without authority">统筹推进 / 无授权领导</h3>
+          <p data-zh="作为党支部副书记，我统筹过大型活动的全流程：设 4 组分工、定时间节点、同步进度，并把它沉淀成一份可复用的 SOP。" data-en="As Deputy Secretary of the Party Branch, I coordinated an event end to end: splitting 4 teams, setting milestones, tracking progress — and distilling it into a reusable SOP.">作为党支部副书记，我统筹过大型活动的全流程：设 4 组分工、定时间节点、同步进度，并把它沉淀成一份可复用的 SOP。</p>
+        </div>
       </div>
-      <div class="skill">
+      <div class="skill reveal">
         <div class="num">03</div>
-        <h3>用透明化解决冲突</h3>
-        <p>面对不配合，我不私聊施压，而是把"分配逻辑"公开讲清，让信息对称后对方自己接受——既推进任务，也不伤关系。</p>
+        <div>
+          <h3 data-zh="用透明化解决冲突" data-en="Resolving conflict through transparency">用透明化解决冲突</h3>
+          <p data-zh="面对不配合，我不私聊施压，而是把“分配逻辑”公开讲清，让信息对称后对方自己接受——既推进任务，也不伤关系。" data-en="When faced with resistance, I do not pressure people privately. I make the allocation logic public so that, with symmetric information, they accept it themselves — moving the task forward without damaging relationships.">面对不配合，我不私聊施压，而是把“分配逻辑”公开讲清，让信息对称后对方自己接受——既推进任务，也不伤关系。</p>
+        </div>
       </div>
-      <div class="skill">
+      <div class="skill reveal">
         <div class="num">04</div>
-        <h3>高压下的系统化落地</h3>
-        <p>多任务并行时，我用四象限法则拆优先级、用日历排期、每天复盘。不是靠"硬扛"，而是靠一套让自己不崩的方法。</p>
+        <div>
+          <h3 data-zh="高压下的系统化落地" data-en="Systematic execution under pressure">高压下的系统化落地</h3>
+          <p data-zh="多任务并行时，我用四象限法则拆优先级、用日历排期、每天复盘。不是靠“硬扛”，而是靠一套让自己不崩的方法。" data-en="When multitasking, I prioritize with the Eisenhower matrix, schedule on a calendar, and review daily. Not by “toughing it out,” but with a system that keeps me steady.">多任务并行时，我用四象限法则拆优先级、用日历排期、每天复盘。不是靠“硬扛”，而是靠一套让自己不崩的方法。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -387,81 +391,76 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ WORK ============ -->
 <section class="work" id="work">
   <div class="wrap">
-    <div class="sec-label">03 · 项目</div>
-    <h2 class="sec-title">代表作，<br>每一件都经得起追问</h2>
-    <p class="sec-intro">从全国品牌策划竞赛到供应链经营模拟，都是我真实下场做过的项目。点开任意一条，可以看完整的过程、数据与证据。</p>
+    <div class="sec-head reveal">
+      <div class="sec-index">03 · <span data-zh="项目" data-en="Projects">项目</span></div>
+      <h2 class="sec-title" data-zh="代表作，每一件都经得起追问" data-en="Signature work — every piece stands up to scrutiny">代表作，每一件都经得起追问</h2>
+      <p class="sec-intro" data-zh="从全国品牌策划竞赛到供应链经营模拟，都是我真实下场做过的项目。点开任意一条，可以看完整的过程、数据与证据。" data-en="From a national brand-planning contest to supply-chain simulation — these are projects I actually did. Open any row to see the full process, data, and evidence.">从全国品牌策划竞赛到供应链经营模拟，都是我真实下场做过的项目。点开任意一条，可以看完整的过程、数据与证据。</p>
+    </div>
 
     <div class="acc-list">
-      <!-- 小胡鸭 -->
       <div class="acc-row" data-target="acc-hup">
-        <div class="num">01</div>
+        <div class="num">(01)</div>
         <div class="ti">
-          <h3>小胡鸭 · 品牌年轻化全案策划</h3>
-          <div class="meta"><b>全国三等奖</b><span>品牌策划竞赛</span><span>调研 · 财务 · 呈现 · 答辩</span></div>
+          <h3 data-zh="小胡鸭 · 品牌年轻化全案策划" data-en="Xiaohuya · Full Brand Rejuvenation Plan">小胡鸭 · 品牌年轻化全案策划</h3>
+          <div class="tags"><b data-zh="全国三等奖" data-en="National 3rd Prize">全国三等奖</b><span data-zh="品牌策划竞赛" data-en="Brand Planning Contest">品牌策划竞赛</span><span data-zh="调研 · 财务 · 呈现 · 答辩" data-en="Research · Finance · Presentation · Defense">调研 · 财务 · 呈现 · 答辩</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-hup"><div class="acc-detail-inner">
-        <p class="lead-p">这不是一次拼 PPT 的比赛，而是一套从一线调研、成本测算到品牌营销、现场答辩的完整商业方案。为荆州本地卤味品牌“小胡鸭”做问题诊断 + 成本优化 + 品牌营销落地全案。我全程深度参与，扛下调研、财务、呈现、答辩四块核心工作。</p>
-
+        <p class="lead-p" data-zh="这不是一次拼 PPT 的比赛，而是一套从一线调研、成本测算到品牌营销、现场答辩的完整商业方案。为荆州本地卤味品牌“小胡鸭”做问题诊断 + 成本优化 + 品牌营销落地全案。我全程深度参与，扛下调研、财务、呈现、答辩四块核心工作。" data-en="This was not a slide-making contest but a complete business plan — from frontline research and cost modeling to brand marketing and a live defense — for Xiaohuya, a local braised-food brand in Jingzhou. I was deeply involved throughout, owning four core areas: research, finance, presentation, and defense.">这不是一次拼 PPT 的比赛，而是一套从一线调研、成本测算到品牌营销、现场答辩的完整商业方案。为荆州本地卤味品牌“小胡鸭”做问题诊断 + 成本优化 + 品牌营销落地全案。我全程深度参与，扛下调研、财务、呈现、答辩四块核心工作。</p>
         <ul class="acc-points">
-          <li><b>一线调研：</b>团队唯一对接调研的人。线下跑企业、看生产线、记录真实流程，挖一手数据。</li>
-          <li><b>财务测算：</b>扛下财务板块全流程，测算投资、生产、营销成本，推演利润最高、风险最低的落地模型。</li>
-          <li><b>方案呈现：</b>全权负责 PPT 排版、逻辑串联与风格定调，对标优秀作品打磨呈现效果。</li>
-          <li><b>现场答辩：</b>自撰答辩稿、划分主次亮点，脱稿卡点完成全程答辩并应对评委提问。</li>
+          <li data-zh="一线调研：团队唯一对接调研的人。线下跑企业、看生产线、记录真实流程，挖一手数据。" data-en="Frontline research: the only person on the team doing field outreach — visiting the company, observing production lines, documenting real processes, and mining first-hand data."><b>一线调研：</b>团队唯一对接调研的人。线下跑企业、看生产线、记录真实流程，挖一手数据。</li>
+          <li data-zh="财务测算：扛下财务板块全流程，测算投资、生产、营销成本，推演利润最高、风险最低的落地模型。" data-en="Financial modeling: owned the entire finance section — estimating investment, production, and marketing costs, and deriving the highest-profit, lowest-risk execution model."><b>财务测算：</b>扛下财务板块全流程，测算投资、生产、营销成本，推演利润最高、风险最低的落地模型。</li>
+          <li data-zh="方案呈现：全权负责 PPT 排版、逻辑串联与风格定调，对标优秀作品打磨呈现效果。" data-en="Presentation: fully responsible for slide layout, logical flow, and visual tone, benchmarked against top-tier work."><b>方案呈现：</b>全权负责 PPT 排版、逻辑串联与风格定调，对标优秀作品打磨呈现效果。</li>
+          <li data-zh="现场答辩：自撰答辩稿、划分主次亮点，脱稿卡点完成全程答辩并应对评委提问。" data-en="Live defense: wrote the script, sequenced key highlights, and delivered the full defense from memory while fielding judges' questions."><b>现场答辩：</b>自撰答辩稿、划分主次亮点，脱稿卡点完成全程答辩并应对评委提问。</li>
         </ul>
-
-        <div class="sec-label">方案测算数据</div>
+        <div class="sec-index" style="margin-bottom:16px" data-zh="方案测算数据" data-en="Estimated plan figures">方案测算数据</div>
         <div class="metrics">
-          <div class="metric"><b>¥149,812</b><small>全案总预算测算</small></div>
-          <div class="metric"><b>+35%</b><small>目标群体品牌认知度预期提升</small></div>
-          <div class="metric"><b>+12%~18%</b><small>新渠道预期新增营收占比</small></div>
-          <div class="metric"><b>-22%</b><small>单用户获客成本预期下降</small></div>
+          <div class="metric"><b>¥149,812</b><small data-zh="全案总预算测算" data-en="Total budget estimate">全案总预算测算</small></div>
+          <div class="metric"><b>+35%</b><small data-zh="目标群体品牌认知度预期提升" data-en="Expected brand awareness lift">目标群体品牌认知度预期提升</small></div>
+          <div class="metric"><b>+12%~18%</b><small data-zh="新渠道预期新增营收占比" data-en="New-channel revenue share">新渠道预期新增营收占比</small></div>
+          <div class="metric"><b>-22%</b><small data-zh="单用户获客成本预期下降" data-en="Expected CAC reduction">单用户获客成本预期下降</small></div>
         </div>
-        <p class="metric-note">* 以上为竞赛方案阶段的测算推演值，非企业实际经营结果，仅用于呈现方案逻辑与量化思路。</p>
-
+        <p class="metric-note" data-zh="* 以上为竞赛方案阶段的测算推演值，非企业实际经营结果，仅用于呈现方案逻辑与量化思路。" data-en="* The above are estimates from the competition-planning stage, not actual business results — shown only to illustrate the plan's logic and quantitative approach.">* 以上为竞赛方案阶段的测算推演值，非企业实际经营结果，仅用于呈现方案逻辑与量化思路。</p>
         <div class="highlight-box">
-          <h4>答辩现场的 30 秒</h4>
-          <p>评委质疑我们的产品定价偏高、不贴合市场。我没有慌，直接报出调研数据、成本测算与竞品定价，解释这个价格是结合生产成本、营销投放成本、同类竞品市场价、目标客群消费能力多维测算出的最优解——既保盈利空间，又有市场竞争力。</p>
-          <p>评委当场点头认可。那一刻我特别笃定：我做的所有调研和数据推演，不是无用功，是真的能说服专业人的有效方案。</p>
+          <h4 data-zh="答辩现场的 30 秒" data-en="30 seconds on the defense stage">答辩现场的 30 秒</h4>
+          <p data-zh="评委质疑我们的产品定价偏高、不贴合市场。我没有慌，直接报出调研数据、成本测算与竞品定价，解释这个价格是结合生产成本、营销投放成本、同类竞品市场价、目标客群消费能力多维测算出的最优解——既保盈利空间，又有市场竞争力。" data-en="A judge challenged that our pricing was too high and out of touch. I stayed calm, laid out the research data, cost model, and competitor pricing, explaining that the price was the optimal solution derived from production cost, marketing spend, comparable market prices, and target customers' spending power — keeping both profit margin and market competitiveness.">评委质疑我们的产品定价偏高、不贴合市场。我没有慌，直接报出调研数据、成本测算与竞品定价，解释这个价格是结合生产成本、营销投放成本、同类竞品市场价、目标客群消费能力多维测算出的最优解——既保盈利空间，又有市场竞争力。</p>
+          <p data-zh="评委当场点头认可。那一刻我特别笃定：我做的所有调研和数据推演，不是无用功，是真的能说服专业人的有效方案。" data-en="The judge nodded on the spot. In that moment I was sure: all my research and modeling was not wasted effort — it genuinely persuaded professionals.">评委当场点头认可。那一刻我特别笃定：我做的所有调研和数据推演，不是无用功，是真的能说服专业人的有效方案。</p>
         </div>
-
-        <div class="sec-label" style="margin-top:36px">调研中的人和判断</div>
-        <p>在市场调研里，比"拿到数据"更难的，是让人愿意跟你说真话。我专门记录了一次这样的沟通：对接一家本地连锁酒馆时，店长以为我们是招商推销，态度冷淡、不愿给经营数据。我先亮明高校竞赛的身份、承诺数据不商用不泄露；不追问敏感营收，转而聊他真正头疼的"下酒小吃品类少、外购毛利低"；先听他吐槽供应商，再站在他的角度抛合作方案。放下防备后，他主动分享了客群偏好、定价区间和进场顾虑——这些成了策划书渠道策略的现实依据。</p>
-
-        <div class="sec-label">方案与过程</div>
+        <div class="sec-index" style="margin:36px 0 14px" data-zh="调研中的人和判断" data-en="People and judgement in the research">调研中的人和判断</div>
+        <p data-zh="在市场调研里，比“拿到数据”更难的，是让人愿意跟你说真话。我专门记录了一次这样的沟通：对接一家本地连锁酒馆时，店长以为我们是招商推销，态度冷淡、不愿给经营数据。我先亮明高校竞赛的身份、承诺数据不商用不泄露；不追问敏感营收，转而聊他真正头疼的“下酒小吃品类少、外购毛利低”；先听他吐槽供应商，再站在他的角度抛合作方案。放下防备后，他主动分享了客群偏好、定价区间和进场顾虑——这些成了策划书渠道策略的现实依据。" data-en="In market research, harder than getting data is getting people to tell you the truth. I recorded one such conversation: when approaching a local bar-chain manager, he assumed we were salespeople — cold and unwilling to share operating data. I first identified us as a university competition team and promised the data would not be commercialized or leaked; I avoided sensitive revenue figures and instead talked about his real pain points — few bar-snack options and low margins on outsourced items. I let him vent about suppliers, then offered a partnership from his perspective. Once his guard dropped, he shared customer preferences, price ranges, and entry concerns — which became the real-world basis for the plan's channel strategy.">在市场调研里，比“拿到数据”更难的，是让人愿意跟你说真话。我专门记录了一次这样的沟通：对接一家本地连锁酒馆时，店长以为我们是招商推销，态度冷淡、不愿给经营数据。我先亮明高校竞赛的身份、承诺数据不商用不泄露；不追问敏感营收，转而聊他真正头疼的“下酒小吃品类少、外购毛利低”；先听他吐槽供应商，再站在他的角度抛合作方案。放下防备后，他主动分享了客群偏好、定价区间和进场顾虑——这些成了策划书渠道策略的现实依据。</p>
+        <div class="sec-index" style="margin-bottom:14px" data-zh="方案与过程" data-en="Plan & process">方案与过程</div>
         <div class="gallery">
-          <figure><img src="assets/defense_team.png" alt="答辩现场" loading="lazy"><figcaption>竞赛答辩现场</figcaption></figure>
-          <figure><img src="assets/ppt_budget.png" alt="财务预算汇总" loading="lazy"><figcaption>财务预算汇总（149,812 元）</figcaption></figure>
-          <figure><img src="assets/nav_offline.png" alt="线下推广章节" loading="lazy"><figcaption>线下推广 · 渠道章节</figcaption></figure>
-          <figure><img src="assets/nav_online.png" alt="线上推广章节" loading="lazy"><figcaption>线上推广 · 渠道章节</figcaption></figure>
-          <figure><img src="assets/ppt_bar.png" alt="酒吧合作" loading="lazy"><figcaption>渠道方案 · 与酒吧合作</figcaption></figure>
-          <figure><img src="assets/ppt_tea.png" alt="茶馆合作" loading="lazy"><figcaption>渠道方案 · 与茶馆合作</figcaption></figure>
-          <figure><img src="assets/ppt_channel.png" alt="零食店渠道" loading="lazy"><figcaption>渠道方案 · 引入零食店</figcaption></figure>
-          <figure><img src="assets/ppt_topic_spring.png" alt="话题推广" loading="lazy"><figcaption>线上 · 话题推广</figcaption></figure>
-          <figure><img src="assets/ppt_h5.png" alt="AI智能推荐" loading="lazy"><figcaption>线上 · AI 智能推荐 H5</figcaption></figure>
-          <figure><img src="assets/ppt_storyboard.png" alt="视频分镜表" loading="lazy"><figcaption>线上 · 品牌视频分镜脚本</figcaption></figure>
-          <figure><img src="assets/ip_merch.png" alt="IP周边设计" loading="lazy"><figcaption>IP 周边衍生设计</figcaption></figure>
-          <figure><img src="assets/ppt_risk.png" alt="品牌风险管理" loading="lazy"><figcaption>品牌风险管理与对策</figcaption></figure>
+          <figure><img src="assets/defense_team.png" alt="答辩现场" loading="lazy"><figcaption data-zh="竞赛答辩现场" data-en="Competition defense stage">竞赛答辩现场</figcaption></figure>
+          <figure><img src="assets/ppt_budget.png" alt="财务预算汇总" loading="lazy"><figcaption data-zh="财务预算汇总（149,812 元）" data-en="Budget summary (¥149,812)">财务预算汇总（149,812 元）</figcaption></figure>
+          <figure><img src="assets/nav_offline.png" alt="线下推广章节" loading="lazy"><figcaption data-zh="线下推广 · 渠道章节" data-en="Offline channels">线下推广 · 渠道章节</figcaption></figure>
+          <figure><img src="assets/nav_online.png" alt="线上推广章节" loading="lazy"><figcaption data-zh="线上推广 · 渠道章节" data-en="Online channels">线上推广 · 渠道章节</figcaption></figure>
+          <figure><img src="assets/ppt_bar.png" alt="酒吧合作" loading="lazy"><figcaption data-zh="渠道方案 · 与酒吧合作" data-en="Channel · Bar partnership">渠道方案 · 与酒吧合作</figcaption></figure>
+          <figure><img src="assets/ppt_tea.png" alt="茶馆合作" loading="lazy"><figcaption data-zh="渠道方案 · 与茶馆合作" data-en="Channel · Tea house partnership">渠道方案 · 与茶馆合作</figcaption></figure>
+          <figure><img src="assets/ppt_channel.png" alt="零食店渠道" loading="lazy"><figcaption data-zh="渠道方案 · 引入零食店" data-en="Channel · Snack shops">渠道方案 · 引入零食店</figcaption></figure>
+          <figure><img src="assets/ppt_topic_spring.png" alt="话题推广" loading="lazy"><figcaption data-zh="线上 · 话题推广" data-en="Online · Topic campaign">线上 · 话题推广</figcaption></figure>
+          <figure><img src="assets/ppt_h5.png" alt="AI智能推荐" loading="lazy"><figcaption data-zh="线上 · AI 智能推荐 H5" data-en="Online · AI recommender H5">线上 · AI 智能推荐 H5</figcaption></figure>
+          <figure><img src="assets/ppt_storyboard.png" alt="视频分镜表" loading="lazy"><figcaption data-zh="线上 · 品牌视频分镜脚本" data-en="Online · Video storyboard">线上 · 品牌视频分镜脚本</figcaption></figure>
+          <figure><img src="assets/ip_merch.png" alt="IP周边设计" loading="lazy"><figcaption data-zh="IP 周边衍生设计" data-en="IP merchandise design">IP 周边衍生设计</figcaption></figure>
+          <figure><img src="assets/ppt_risk.png" alt="品牌风险管理" loading="lazy"><figcaption data-zh="品牌风险管理与对策" data-en="Brand risk management">品牌风险管理与对策</figcaption></figure>
         </div>
       </div></div>
 
-      <!-- 供应链 -->
       <div class="acc-row" data-target="acc-scm">
-        <div class="num">02</div>
+        <div class="num">(02)</div>
         <div class="ti">
-          <h3>全国企业竞争模拟大赛 · 供应链决策</h3>
-          <div class="meta"><b>全国二等奖</b><span>本科组 · 我的最高奖项</span></div>
+          <h3 data-zh="全国企业竞争模拟大赛 · 供应链决策" data-en="National Business Simulation Contest · Supply Chain">全国企业竞争模拟大赛 · 供应链决策</h3>
+          <div class="tags"><b data-zh="全国二等奖" data-en="National 2nd Prize">全国二等奖</b><span data-zh="本科组 · 我的最高奖项" data-en="Undergraduate · My highest award">本科组 · 我的最高奖项</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-scm"><div class="acc-detail-inner">
-        <p class="lead-p">参与供应链模拟经营，负责采购、库存、产能测算，研判市场竞争，协同团队完成多周期经营博弈。</p>
+        <p class="lead-p" data-zh="参与供应链模拟经营，负责采购、库存、产能测算，研判市场竞争，协同团队完成多周期经营博弈。" data-en="Participated in a supply-chain simulation, owning procurement, inventory, and capacity modeling, assessing market competition, and collaborating with the team across multiple operating cycles.">参与供应链模拟经营，负责采购、库存、产能测算，研判市场竞争，协同团队完成多周期经营博弈。</p>
         <ul class="acc-points">
-          <li><b>采购与库存：</b>根据多周期市场需求预测制定采购与库存策略，控制成本与缺货风险。</li>
-          <li><b>产能与决策：</b>测算产能安排，研判竞争格局，协同团队完成多周期经营博弈。</li>
+          <li data-zh="采购与库存：根据多周期市场需求预测制定采购与库存策略，控制成本与缺货风险。" data-en="Procurement & inventory: set purchasing and inventory strategies based on multi-period demand forecasts, controlling cost and stock-out risk."><b>采购与库存：</b>根据多周期市场需求预测制定采购与库存策略，控制成本与缺货风险。</li>
+          <li data-zh="产能与决策：测算产能安排，研判竞争格局，协同团队完成多周期经营博弈。" data-en="Capacity & decisions: modeled capacity plans, assessed the competitive landscape, and coordinated the team across cycles."><b>产能与决策：</b>测算产能安排，研判竞争格局，协同团队完成多周期经营博弈。</li>
         </ul>
-        <p style="font-family:var(--serif);font-size:18px;color:var(--accent-deep);font-weight:700">★ 全国二等奖 · 我在校获得的最高奖项</p>
+        <p style="font-family:var(--serif);font-size:18px;color:var(--accent-deep);font-weight:700" data-zh="★ 全国二等奖 · 我在校获得的最高奖项" data-en="★ National 2nd Prize · My highest award in university">★ 全国二等奖 · 我在校获得的最高奖项</p>
       </div></div>
     </div>
   </div>
@@ -470,69 +469,68 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ INTERNSHIP ============ -->
 <section class="intern" id="intern">
   <div class="wrap">
-    <div class="sec-label">04 · 实习经历</div>
-    <h2 class="sec-title">在真实岗位里，<br>把想法变成能看见的结果</h2>
-    <p class="sec-intro">三段实习，三个场景：一线运营、财务核算、政务监督。它们共同证明了一件事——我不只能"想"，更能"做"，并能把做的事说清楚。点开任意一段，可以看具体做了什么、拿到了什么结果。</p>
+    <div class="sec-head reveal">
+      <div class="sec-index">04 · <span data-zh="实习经历" data-en="Internships">实习经历</span></div>
+      <h2 class="sec-title" data-zh="在真实岗位里，把想法变成能看见的结果" data-en="On real jobs, turning ideas into visible results">在真实岗位里，把想法变成能看见的结果</h2>
+      <p class="sec-intro" data-zh="三段实习，三个场景：一线运营、财务核算、政务监督。它们共同证明了一件事——我不只能“想”，更能“做”，并能把做的事说清楚。" data-en="Three internships, three settings: frontline operations, accounting, and public-sector supervision. Together they prove one thing — I do not just think, I do, and I can explain clearly what I did.">三段实习，三个场景：一线运营、财务核算、政务监督。它们共同证明了一件事——我不只能“想”，更能“做”，并能把做的事说清楚。</p>
+    </div>
 
     <div class="acc-list">
-      <!-- 张鸭子 -->
       <div class="acc-row" data-target="acc-zyz">
-        <div class="num">01</div>
+        <div class="num">(01)</div>
         <div class="ti">
-          <h3>重庆张鸭子食品有限公司 · 运营实习生</h3>
-          <div class="meta"><b>2025.01 – 2025.03</b><span>销售运营 · 营销操盘</span></div>
+          <h3 data-zh="重庆张鸭子食品有限公司 · 运营实习生" data-en="Chongqing Zhangyazi Food Co., Ltd. · Operations Intern">重庆张鸭子食品有限公司 · 运营实习生</h3>
+          <div class="tags"><b>2025.01 – 2025.03</b><span data-zh="销售运营 · 营销操盘" data-en="Sales ops · Marketing">销售运营 · 营销操盘</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-zyz"><div class="acc-detail-inner">
-        <p class="lead-p">在卤味食品门店做一线运营，既要面对真实的顾客，也要对销售结果负责。</p>
+        <p class="lead-p" data-zh="在卤味食品门店做一线运营，既要面对真实的顾客，也要对销售结果负责。" data-en="Frontline operations at a braised-food store — facing real customers while being accountable for sales results.">在卤味食品门店做一线运营，既要面对真实的顾客，也要对销售结果负责。</p>
         <ul class="acc-points">
-          <li><b>销售运营：</b>对接线下顾客 1200+ 人次，迭代销售推介话术，所在岗位个人业绩占门店 28%，提升老客复购率 16%。</li>
-          <li><b>营销操盘：</b>落地节假日促销活动，设计组合套餐，推动销售额提升 22%、门店营收上涨 24%。</li>
+          <li data-zh="销售运营：对接线下顾客 1200+ 人次，迭代销售推介话术，所在岗位个人业绩占门店 28%，提升老客复购率 16%。" data-en="Sales ops: served 1,200+ offline customers, iterated sales pitches, with personal performance accounting for 28% of store sales, lifting repeat-purchase rate by 16%."><b>销售运营：</b>对接线下顾客 1200+ 人次，迭代销售推介话术，所在岗位个人业绩占门店 28%，提升老客复购率 16%。</li>
+          <li data-zh="营销操盘：落地节假日促销活动，设计组合套餐，推动销售额提升 22%、门店营收上涨 24%。" data-en="Marketing: executed holiday promotions and designed combo packages, driving sales up 22% and store revenue up 24%."><b>营销操盘：</b>落地节假日促销活动，设计组合套餐，推动销售额提升 22%、门店营收上涨 24%。</li>
         </ul>
         <div class="acc-gallery g2">
-          <figure><img src="assets/intern_zyz_product.png" alt="张鸭子产品展示" loading="lazy"><figcaption>产品实拍 · 卤味品牌陈列</figcaption></figure>
-          <figure><img src="assets/intern_zyz_shelf.jpg" alt="张鸭子门店货架陈列" loading="lazy"><figcaption>门店终端货架陈列 · 促销物料落地</figcaption></figure>
+          <figure><img src="assets/intern_zyz_product.png" alt="张鸭子产品展示" loading="lazy"><figcaption data-zh="产品实拍 · 卤味品牌陈列" data-en="Product shot · braised-food display">产品实拍 · 卤味品牌陈列</figcaption></figure>
+          <figure><img src="assets/intern_zyz_shelf.jpg" alt="张鸭子门店货架陈列" loading="lazy"><figcaption data-zh="门店终端货架陈列 · 促销物料落地" data-en="Retail shelf display · promotion materials">门店终端货架陈列 · 促销物料落地</figcaption></figure>
         </div>
       </div></div>
 
-      <!-- 雨雪鑫 -->
       <div class="acc-row" data-target="acc-yxx">
-        <div class="num">02</div>
+        <div class="num">(02)</div>
         <div class="ti">
-          <h3>重庆雨雪鑫农业开发有限公司 · 会计实习生</h3>
-          <div class="meta"><b>2025.07 – 2025.09</b><span>业务对接 · 资料管理</span></div>
+          <h3 data-zh="重庆雨雪鑫农业开发有限公司 · 会计实习生" data-en="Chongqing Yuxuexin Agricultural Development Co., Ltd. · Accounting Intern">重庆雨雪鑫农业开发有限公司 · 会计实习生</h3>
+          <div class="tags"><b>2025.07 – 2025.09</b><span data-zh="业务对接 · 资料管理" data-en="Business liaison · Records">业务对接 · 资料管理</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-yxx"><div class="acc-detail-inner">
-        <p class="lead-p">在农业供应链企业做会计实习，让我真正看懂了一笔业务从单据到账目的完整链路。</p>
+        <p class="lead-p" data-zh="在农业供应链企业做会计实习，让我真正看懂了一笔业务从单据到账目的完整链路。" data-en="An accounting internship at an agri supply-chain company taught me to see the full chain from document to ledger.">在农业供应链企业做会计实习，让我真正看懂了一笔业务从单据到账目的完整链路。</p>
         <ul class="acc-points">
-          <li><b>业务对接：</b>梳理业务单据 200+ 份，打通多部门协同流程，理解供应链业务逻辑。</li>
-          <li><b>资料管理：</b>整理归档业务票据 300+ 张，搭建业务台账，提升查阅效率 40%，保障业务数据可追溯。</li>
+          <li data-zh="业务对接：梳理业务单据 200+ 份，打通多部门协同流程，理解供应链业务逻辑。" data-en="Business liaison: reviewed 200+ business documents, streamlined cross-department collaboration, and understood supply-chain logic."><b>业务对接：</b>梳理业务单据 200+ 份，打通多部门协同流程，理解供应链业务逻辑。</li>
+          <li data-zh="资料管理：整理归档业务票据 300+ 张，搭建业务台账，提升查阅效率 40%，保障业务数据可追溯。" data-en="Records: filed and archived 300+ business receipts, built a business ledger, improving lookup efficiency by 40% and ensuring traceability."><b>资料管理：</b>整理归档业务票据 300+ 张，搭建业务台账，提升查阅效率 40%，保障业务数据可追溯。</li>
         </ul>
         <div class="acc-gallery g1">
-          <figure><img src="assets/intern_yuxuexin.jpg" alt="会计岗位库存明细账工作场景" loading="lazy"><figcaption>会计岗位实拍 · 库存商品明细账核对</figcaption></figure>
+          <figure><img src="assets/intern_yuxuexin.jpg" alt="会计岗位库存明细账工作场景" loading="lazy"><figcaption data-zh="会计岗位实拍 · 库存商品明细账核对" data-en="Accounting role · inventory ledger reconciliation">会计岗位实拍 · 库存商品明细账核对</figcaption></figure>
         </div>
       </div></div>
 
-      <!-- 纪委 -->
       <div class="acc-row" data-target="acc-jw">
-        <div class="num">03</div>
+        <div class="num">(03)</div>
         <div class="ti">
-          <h3>重庆市武隆区纪委监委 · 实习生</h3>
-          <div class="meta"><b>2026.01 – 2026.02</b><span>客户沟通 · 预算管控</span></div>
+          <h3 data-zh="重庆市武隆区纪委监委 · 实习生" data-en="Chongqing Wulong District Discipline Inspection & Supervision Commission · Intern">重庆市武隆区纪委监委 · 实习生</h3>
+          <div class="tags"><b>2026.01 – 2026.02</b><span data-zh="客户沟通 · 预算管控" data-en="Client communication · Budget control">客户沟通 · 预算管控</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-jw"><div class="acc-detail-inner">
-        <p class="lead-p">在政府监督岗位上，我练的是"把话说进对方心里"的沟通能力，以及对经费与合规的敏感度。</p>
+        <p class="lead-p" data-zh="在政府监督岗位上，我练的是“把话说进对方心里”的沟通能力，以及对经费与合规的敏感度。" data-en="In a public-supervision role, I honed the ability to communicate in a way that truly lands, plus sensitivity to budgets and compliance.">在政府监督岗位上，我练的是“把话说进对方心里”的沟通能力，以及对经费与合规的敏感度。</p>
         <ul class="acc-points">
-          <li><b>客户沟通：</b>接待客户沟通 30 余例，擅长共情沟通、需求挖掘，具备对外沟通谈判、问题协调解决能力。</li>
-          <li><b>预算管控：</b>协助费用报销审核 50+ 笔，熟悉预算逻辑，具备成本意识，可辅助营销商务方案的成本测算。</li>
+          <li data-zh="客户沟通：接待客户沟通 30 余例，擅长共情沟通、需求挖掘，具备对外沟通谈判、问题协调解决能力。" data-en="Client communication: handled 30+ cases, skilled in empathetic communication and needs discovery, with external negotiation and problem-solving ability."><b>客户沟通：</b>接待客户沟通 30 余例，擅长共情沟通、需求挖掘，具备对外沟通谈判、问题协调解决能力。</li>
+          <li data-zh="预算管控：协助费用报销审核 50+ 笔，熟悉预算逻辑，具备成本意识，可辅助营销商务方案的成本测算。" data-en="Budget control: helped review 50+ expense reimbursements, familiar with budget logic, cost-conscious, able to support cost modeling for commercial proposals."><b>预算管控：</b>协助费用报销审核 50+ 笔，熟悉预算逻辑，具备成本意识，可辅助营销商务方案的成本测算。</li>
         </ul>
         <div class="acc-gallery g1">
-          <figure><img src="assets/intern_jiwei.jpg" alt="纪委监委实习证明（已脱敏）" loading="lazy"><figcaption>武隆区纪委监委实习证明 · 个人信息已脱敏</figcaption></figure>
+          <figure><img src="assets/intern_jiwei.jpg" alt="纪委监委实习证明（已脱敏）" loading="lazy"><figcaption data-zh="武隆区纪委监委实习证明 · 个人信息已脱敏" data-en="Internship certificate · personal info redacted">武隆区纪委监委实习证明 · 个人信息已脱敏</figcaption></figure>
         </div>
       </div></div>
     </div>
@@ -542,63 +540,65 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience">
   <div class="wrap">
-    <div class="sec-label">05 · 学生工作</div>
-    <h2 class="sec-title">学生工作：<br>把混乱的事，理成能落地的结构</h2>
-    <p class="sec-intro">作为党支部副书记，我做的不是"挂名"，而是具体地把一件件跨部门、多头绪的事推到底。下面三件，是我最有代表性的证据。</p>
+    <div class="sec-head reveal">
+      <div class="sec-index">05 · <span data-zh="学生工作" data-en="Leadership">学生工作</span></div>
+      <h2 class="sec-title" data-zh="学生工作：把混乱的事，理成能落地的结构" data-en="Leadership: turning messy things into actionable structure">学生工作：把混乱的事，理成能落地的结构</h2>
+      <p class="sec-intro" data-zh="作为党支部副书记，我做的不是“挂名”，而是具体地把一件件跨部门、多头绪的事推到底。下面三件，是我最有代表性的证据。" data-en="As Deputy Secretary of the Party Branch, I was not a figurehead — I pushed cross-department, multi-thread tasks all the way through. Here are three of the most representative cases.">作为党支部副书记，我做的不是“挂名”，而是具体地把一件件跨部门、多头绪的事推到底。下面三件，是我最有代表性的证据。</p>
+    </div>
 
     <div class="acc-list">
       <div class="acc-row" data-target="acc-sop">
-        <div class="num">01</div>
+        <div class="num">(01)</div>
         <div class="ti">
-          <h3>毕业生党员欢送会</h3>
-          <div class="meta"><b>统筹全流程</b><span>沉淀为可复用 SOP</span></div>
+          <h3 data-zh="毕业生党员欢送会" data-en="Graduating Party Members' Farewell Event">毕业生党员欢送会</h3>
+          <div class="tags"><b data-zh="统筹全流程" data-en="End-to-end coordination">统筹全流程</b><span data-zh="沉淀为可复用 SOP" data-en="Distilled into a reusable SOP">沉淀为可复用 SOP</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-sop"><div class="acc-detail-inner">
-        <p>参照往届留存记录制定方案，划分后勤、表演、策划、物资四组，四位支委各任组长，我负责总体统筹、划分时间节点、同步进度。</p>
-        <p>现场学妹负责的互动游戏出了状况（PPT 没有音效），我上前接过话筒继续推进，活动没有中断。事后书记与上届学姐都发消息称赞，这次活动也形成了一份可复用的欢送会 SOP。</p>
+        <p data-zh="参照往届留存记录制定方案，划分后勤、表演、策划、物资四组，四位支委各任组长，我负责总体统筹、划分时间节点、同步进度。" data-en="I planned based on records from previous years, split the work into four teams — logistics, performance, planning, and supplies — with each of the four branch committee members leading one, while I handled overall coordination, milestones, and progress tracking.">参照往届留存记录制定方案，划分后勤、表演、策划、物资四组，四位支委各任组长，我负责总体统筹、划分时间节点、同步进度。</p>
+        <p data-zh="现场学妹负责的互动游戏出了状况（PPT 没有音效），我上前接过话筒继续推进，活动没有中断。事后书记与上届学姐都发消息称赞，这次活动也形成了一份可复用的欢送会 SOP。" data-en="On the day, an interactive game run by a junior hit a snag (the PPT lost its audio). I stepped up, took the microphone, and kept things moving — the event never stopped. Afterwards both the secretary and a senior student messaged their praise, and the event became a reusable farewell SOP.">现场学妹负责的互动游戏出了状况（PPT 没有音效），我上前接过话筒继续推进，活动没有中断。事后书记与上届学姐都发消息称赞，这次活动也形成了一份可复用的欢送会 SOP。</p>
         <dl class="kv">
-          <dt>可复用 SOP 的关键设计</dt>
-          <dd>① 4 个固定小组 + 支委任组长、任务拆解到人；② 硬性时间节点（前 7 天出脚本 / 前 4 天定节目物料 / 前 1 天物料到位并做 PPT 音视频双备份 / 当日提前 3 小时全流程彩排）；③ 标准化物料清单；④ 现场应急预案，设总兜底人可跨岗接管；⑤ 活动结束 24 小时内复盘，更新 SOP 交给下一届。</dd>
+          <dt data-zh="可复用 SOP 的关键设计" data-en="Key design of the reusable SOP">可复用 SOP 的关键设计</dt>
+          <dd data-zh="① 4 个固定小组 + 支委任组长、任务拆解到人；② 硬性时间节点（前 7 天出脚本 / 前 4 天定节目物料 / 前 1 天物料到位并做 PPT 音视频双备份 / 当日提前 3 小时全流程彩排）；③ 标准化物料清单；④ 现场应急预案，设总兜底人可跨岗接管；⑤ 活动结束 24 小时内复盘，更新 SOP 交给下一届。" data-en="① 4 fixed teams + committee-led groups, tasks broken down to individuals; ② hard milestones (script 7 days out / program & materials 4 days out / materials in place + dual audio-video backup of the PPT 1 day out / full dress rehearsal 3 hours early on the day); ③ a standardized materials checklist; ④ an on-site contingency plan with a designated backup who can take over across roles; ⑤ a review within 24 hours, updating the SOP for the next cohort.">① 4 个固定小组 + 支委任组长、任务拆解到人；② 硬性时间节点（前 7 天出脚本 / 前 4 天定节目物料 / 前 1 天物料到位并做 PPT 音视频双备份 / 当日提前 3 小时全流程彩排）；③ 标准化物料清单；④ 现场应急预案，设总兜底人可跨岗接管；⑤ 活动结束 24 小时内复盘，更新 SOP 交给下一届。</dd>
         </dl>
         <div class="exp-imgs">
-          <figure><img src="assets/sop_cover.jpg" alt="欢送会SOP封面" loading="lazy"><figcaption>毕业生党员欢送会 · 标准操作流程</figcaption></figure>
-          <figure><img src="assets/sop_flow.jpg" alt="欢送会SOP流程图" loading="lazy" style="object-fit:contain;background:var(--paper)"><figcaption>SOP 流程图 · 四组分工与时间节点</figcaption></figure>
+          <figure><img src="assets/sop_cover.jpg" alt="欢送会SOP封面" loading="lazy"><figcaption data-zh="毕业生党员欢送会 · 标准操作流程" data-en="Farewell event · Standard Operating Procedure">毕业生党员欢送会 · 标准操作流程</figcaption></figure>
+          <figure><img src="assets/sop_flow.jpg" alt="欢送会SOP流程图" loading="lazy" style="object-fit:contain;background:var(--white)"><figcaption data-zh="SOP 流程图 · 四组分工与时间节点" data-en="SOP flowchart · 4 teams & milestones">SOP 流程图 · 四组分工与时间节点</figcaption></figure>
         </div>
         <div class="exp-imgs" style="grid-template-columns:1fr">
-          <figure><img src="assets/farewell_scene.jpg" alt="欢送会现场" loading="lazy" style="object-fit:cover;height:260px"><figcaption>毕业生党员欢送会 · 现场</figcaption></figure>
+          <figure><img src="assets/farewell_scene.jpg" alt="欢送会现场" loading="lazy" style="object-fit:cover;height:260px"><figcaption data-zh="毕业生党员欢送会 · 现场" data-en="Farewell event · on site">毕业生党员欢送会 · 现场</figcaption></figure>
         </div>
       </div></div>
 
       <div class="acc-row" data-target="acc-org">
-        <div class="num">02</div>
+        <div class="num">(02)</div>
         <div class="ti">
-          <h3>党员组织关系转接</h3>
-          <div class="meta"><b>独立牵头</b><span>零漏转 · 零错转</span></div>
+          <h3 data-zh="党员组织关系转接" data-en="Party Membership Relationship Transfer">党员组织关系转接</h3>
+          <div class="tags"><b data-zh="独立牵头" data-en="Led independently">独立牵头</b><span data-zh="零漏转 · 零错转" data-en="Zero omissions · zero errors">零漏转 · 零错转</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-org"><div class="acc-detail-inner">
-        <p>临近毕业，组织关系转接流程复杂，不少同学不清楚线上操作和材料要求，扎堆来问，个别同学甚至差点逾期。</p>
-        <p>我独立牵头梳理了一份清晰的操作指引，逐个对接有困难的同学，并协调支部书记与学院党务老师确认疑难问题。最终全部毕业生党员顺利完成转接，没有出现漏转、错转。</p>
+        <p data-zh="临近毕业，组织关系转接流程复杂，不少同学不清楚线上操作和材料要求，扎堆来问，个别同学甚至差点逾期。" data-en="Near graduation, the transfer process was complex, and many students were unclear on the online steps and required documents — they piled in with questions, and a few nearly missed the deadline.">临近毕业，组织关系转接流程复杂，不少同学不清楚线上操作和材料要求，扎堆来问，个别同学甚至差点逾期。</p>
+        <p data-zh="我独立牵头梳理了一份清晰的操作指引，逐个对接有困难的同学，并协调支部书记与学院党务老师确认疑难问题。最终全部毕业生党员顺利完成转接，没有出现漏转、错转。" data-en="I independently drafted a clear step-by-step guide, followed up with each student who had difficulties, and coordinated with the branch secretary and college Party affairs teachers on tricky cases. In the end, every graduating member's transfer was completed — no omissions, no errors.">我独立牵头梳理了一份清晰的操作指引，逐个对接有困难的同学，并协调支部书记与学院党务老师确认疑难问题。最终全部毕业生党员顺利完成转接，没有出现漏转、错转。</p>
         <div class="exp-imgs">
-          <figure><img src="assets/party_flow.jpg" alt="组织关系转接操作指引流程图" loading="lazy"><figcaption>组织关系转接操作指引 · 流程图</figcaption></figure>
-          <figure><img src="assets/party_notice.png" alt="材料归档转移通知" loading="lazy"><figcaption>毕业生党员材料归档转移通知</figcaption></figure>
+          <figure><img src="assets/party_flow.jpg" alt="组织关系转接操作指引流程图" loading="lazy"><figcaption data-zh="组织关系转接操作指引 · 流程图" data-en="Transfer guide · flowchart">组织关系转接操作指引 · 流程图</figcaption></figure>
+          <figure><img src="assets/party_notice.png" alt="材料归档转移通知" loading="lazy"><figcaption data-zh="毕业生党员材料归档转移通知" data-en="Document archive & transfer notice">毕业生党员材料归档转移通知</figcaption></figure>
         </div>
       </div></div>
 
       <div class="acc-row" data-target="acc-conf">
-        <div class="num">03</div>
+        <div class="num">(03)</div>
         <div class="ti">
-          <h3>一次冲突的处理</h3>
-          <div class="meta"><b>用透明化代替施压</b><span>推进任务 · 不伤关系</span></div>
+          <h3 data-zh="一次冲突的处理" data-en="Handling a conflict">一次冲突的处理</h3>
+          <div class="tags"><b data-zh="用透明化代替施压" data-en="Transparency over pressure">用透明化代替施压</b><span data-zh="推进任务 · 不伤关系" data-en="Moved the task · kept the relationship">推进任务 · 不伤关系</span></div>
         </div>
         <div class="arrow">↗</div>
       </div>
       <div class="acc-detail" id="acc-conf"><div class="acc-detail-inner">
-        <p>统筹分配支委工作时，一位宣传委员私信我说任务太多、不愿接受这次安排。</p>
-        <p>我没有私聊压她，而是召开了一次线下集体会议，公开罗列每位支委做了什么、以及这样安排的原因，再根据实际情况做合理协调。最后她接受了任务，支部领导班子也没有因此产生隔阂。<strong>——把"分配"摆到台面上讲清逻辑，比私下施压更能解决问题。</strong></p>
+        <p data-zh="统筹分配支委工作时，一位宣传委员私信我说任务太多、不愿接受这次安排。" data-en="When allocating committee tasks, a publicity committee member messaged me privately, saying she had too much and did not want to accept this assignment.">统筹分配支委工作时，一位宣传委员私信我说任务太多、不愿接受这次安排。</p>
+        <p data-zh="我没有私聊压她，而是召开了一次线下集体会议，公开罗列每位支委做了什么、以及这样安排的原因，再根据实际情况做合理协调。最后她接受了任务，支部领导班子也没有因此产生隔阂。——把“分配”摆到台面上讲清逻辑，比私下施压更能解决问题。" data-en="Rather than pressure her privately, I called an in-person group meeting, openly listing what each committee member had done and why the assignment was made, then adjusted reasonably. She accepted the task, and the leadership team did not fall out over it. — Putting allocation on the table and explaining the logic solves problems better than private pressure.">我没有私聊压她，而是召开了一次线下集体会议，公开罗列每位支委做了什么、以及这样安排的原因，再根据实际情况做合理协调。最后她接受了任务，支部领导班子也没有因此产生隔阂。<strong>——把“分配”摆到台面上讲清逻辑，比私下施压更能解决问题。</strong></p>
       </div></div>
     </div>
   </div>
@@ -607,17 +607,19 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ AWARDS ============ -->
 <section class="awards" id="awards">
   <div class="wrap">
-    <div class="sec-label">06 · 竞赛与荣誉</div>
-    <h2 class="sec-title">持续在真实的商业场景里打磨</h2>
-    <p class="sec-intro" style="color:#b8cdc8">这些奖项更像是一条条"练过手"的证据——市场研判、财务测算、统筹决策，我都在模拟的真实经营里做过。</p>
+    <div class="sec-head reveal">
+      <div class="sec-index">06 · <span data-zh="竞赛与荣誉" data-en="Awards">竞赛与荣誉</span></div>
+      <h2 class="sec-title" data-zh="持续在真实的商业场景里打磨" data-en="Sharpened in real business scenarios">持续在真实的商业场景里打磨</h2>
+      <p class="sec-intro" data-zh="这些奖项更像是一条条“练过手”的证据——市场研判、财务测算、统筹决策，我都在模拟的真实经营里做过。" data-en="These awards are more like proof of hands-on practice — market judgement, financial modeling, and coordination decisions, all done in simulated real-world operations.">这些奖项更像是一条条“练过手”的证据——市场研判、财务测算、统筹决策，我都在模拟的真实经营里做过。</p>
+    </div>
     <div class="award-list">
-      <div class="award-row"><div class="an">全国企业竞争模拟大赛（供应链决策本科组）<span class="ad">采购 / 库存 / 产能测算，多周期经营博弈</span></div><span class="award-badge gold">全国二等奖</span></div>
-      <div class="award-row"><div class="an">全国高校商业精英挑战赛品牌策划竞赛<span class="ad">品牌全案策划 · 调研 / 定位 / 营销 / 答辩</span></div><span class="award-badge gold">全国三等奖</span></div>
-      <div class="award-row"><div class="an">第九届中国大学生工程实践与创新能力大赛（企业运营仿真）<span class="ad">企业全流程运营仿真 · 生产 / 财务 / 营销 / 供应链</span></div><span class="award-badge">省级二等奖</span></div>
-      <div class="award-row"><div class="an">"学创杯"全国大学生创业综合模拟大赛（湖北省）<span class="ad">创业经营仿真 · 成本与盈利模型把控</span></div><span class="award-badge">省级二等奖</span></div>
-      <div class="award-row"><div class="an">"鼎堂杯"创业经营模拟赛<span class="ad">企业经营管理与商业决策</span></div><span class="award-badge">省级二等奖</span></div>
-      <div class="award-row"><div class="an">第十一届全国大学生能源经济学术创意大赛（湖北赛区）<span class="ad">行业调研 · 学术创意报告</span></div><span class="award-badge">省级三等奖</span></div>
-      <div class="award-row"><div class="an">全国大学生创新大赛<span class="ad">创新项目立项 / 商业模式设计 / 路演</span></div><span class="award-badge">省级三等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="全国企业竞争模拟大赛（供应链决策本科组）" data-en="National Business Simulation Contest (Supply Chain, Undergrad)">全国企业竞争模拟大赛（供应链决策本科组）<span class="ad" data-zh="采购 / 库存 / 产能测算，多周期经营博弈" data-en="Procurement / inventory / capacity modeling, multi-cycle operations">采购 / 库存 / 产能测算，多周期经营博弈</span></div><span class="award-badge gold" data-zh="全国二等奖" data-en="National 2nd">全国二等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="全国高校商业精英挑战赛品牌策划竞赛" data-en="National College Business Elite Challenge · Brand Planning">全国高校商业精英挑战赛品牌策划竞赛<span class="ad" data-zh="品牌全案策划 · 调研 / 定位 / 营销 / 答辩" data-en="Full brand plan · research / positioning / marketing / defense">品牌全案策划 · 调研 / 定位 / 营销 / 答辩</span></div><span class="award-badge gold" data-zh="全国三等奖" data-en="National 3rd">全国三等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="第九届中国大学生工程实践与创新能力大赛（企业运营仿真）" data-en="9th China College Engineering Practice & Innovation Contest (Business Simulation)">第九届中国大学生工程实践与创新能力大赛（企业运营仿真）<span class="ad" data-zh="企业全流程运营仿真 · 生产 / 财务 / 营销 / 供应链" data-en="End-to-end business simulation · production / finance / marketing / supply chain">企业全流程运营仿真 · 生产 / 财务 / 营销 / 供应链</span></div><span class="award-badge" data-zh="省级二等奖" data-en="Provincial 2nd">省级二等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="“学创杯”全国大学生创业综合模拟大赛（湖北省）" data-en="“Xuechuang Cup” National College Entrepreneurship Simulation (Hubei)">“学创杯”全国大学生创业综合模拟大赛（湖北省）<span class="ad" data-zh="创业经营仿真 · 成本与盈利模型把控" data-en="Startup simulation · cost & profit model control">创业经营仿真 · 成本与盈利模型把控</span></div><span class="award-badge" data-zh="省级二等奖" data-en="Provincial 2nd">省级二等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="“鼎堂杯”创业经营模拟赛" data-en="“Dingtang Cup” Business Simulation Contest">“鼎堂杯”创业经营模拟赛<span class="ad" data-zh="企业经营管理与商业决策" data-en="Business management & commercial decisions">企业经营管理与商业决策</span></div><span class="award-badge" data-zh="省级二等奖" data-en="Provincial 2nd">省级二等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="第十一届全国大学生能源经济学术创意大赛（湖北赛区）" data-en="11th National Energy Economics Academic Contest (Hubei)">第十一届全国大学生能源经济学术创意大赛（湖北赛区）<span class="ad" data-zh="行业调研 · 学术创意报告" data-en="Industry research · academic report">行业调研 · 学术创意报告</span></div><span class="award-badge" data-zh="省级三等奖" data-en="Provincial 3rd">省级三等奖</span></div>
+      <div class="award-row"><div class="an" data-zh="全国大学生创新大赛" data-en="National College Innovation Competition">全国大学生创新大赛<span class="ad" data-zh="创新项目立项 / 商业模式设计 / 路演" data-en="Project incubation / business model / pitch">创新项目立项 / 商业模式设计 / 路演</span></div><span class="award-badge" data-zh="省级三等奖" data-en="Provincial 3rd">省级三等奖</span></div>
     </div>
   </div>
 </section>
@@ -625,38 +627,49 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="sec-label" style="justify-content:center">07 · 联系我</div>
-    <h2 class="sec-title">如果你在找一个"能算又能落地"的人</h2>
-    <p class="lead">我正在寻找市场策划、品牌运营、业务运营、销售方向的机会，工作城市优选江浙沪、广深、成都、重庆、武汉。欢迎随时联系。</p>
-    <div class="contact-cards">
-      <div class="cc">
-        <div class="cl">Email</div>
-        <div class="cv">1485482063@qq.com</div>
-      </div>
-      <div class="cc">
-        <div class="cl">WeChat</div>
-        <div class="cv">同手机号<small>添加请备注来意</small></div>
-      </div>
-      <div class="cc">
-        <div class="cl">求职方向</div>
-        <div class="cv">市场策划 / 品牌运营 / 业务运营 / 销售<small>江浙沪 · 广深 · 成都 · 重庆 · 武汉</small></div>
-      </div>
-      <div class="cc" style="grid-column:1/-1">
-        <div class="cl">Resume</div>
-        <div class="cv"><a href="#contact" style="color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)">联系我索取简历 →</a><small>市场方向 · 2027 校招</small></div>
-      </div>
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <div class="sec-index" style="text-align:center">07 · <span data-zh="联系我" data-en="Contact">联系我</span></div>
+      <h2 class="sec-title" data-zh="如果你在找一个“能算又能落地”的人" data-en="If you are looking for someone who can both calculate and deliver">如果你在找一个“能算又能落地”的人</h2>
+      <p class="lead" data-zh="我正在寻找市场策划、品牌运营、业务运营、销售方向的机会，工作城市优选江浙沪、广深、成都、重庆、武汉。欢迎随时联系。" data-en="I am seeking opportunities in marketing planning, brand operations, business operations, and sales, with a preference for Jiangsu-Zhejiang-Shanghai, Guangzhou-Shenzhen, Chengdu, Chongqing, and Wuhan. Feel free to reach out anytime.">我正在寻找市场策划、品牌运营、业务运营、销售方向的机会，工作城市优选江浙沪、广深、成都、重庆、武汉。欢迎随时联系。</p>
+    </div>
+    <div class="contact-cards reveal">
+      <div class="cc"><div class="cl">Email</div><div class="cv">1485482063@qq.com</div></div>
+      <div class="cc"><div class="cl">WeChat</div><div class="cv" data-zh="同手机号<small>添加请备注来意</small>" data-en="Same as phone number<small>Please note your purpose when adding</small>">同手机号<small>添加请备注来意</small></div></div>
+      <div class="cc"><div class="cl" data-zh="求职方向" data-en="Target roles">求职方向</div><div class="cv" data-zh="市场策划 / 品牌运营 / 业务运营 / 销售<small>江浙沪 · 广深 · 成都 · 重庆 · 武汉</small>" data-en="Marketing Planning / Brand Ops / Business Ops / Sales<small>Jiangsu-Zhejiang-Shanghai · Guangzhou-Shenzhen · Chengdu · Chongqing · Wuhan</small>">市场策划 / 品牌运营 / 业务运营 / 销售<small>江浙沪 · 广深 · 成都 · 重庆 · 武汉</small></div></div>
+      <div class="cc" style="grid-column:1/-1"><div class="cl">Résumé</div><div class="cv"><a href="#contact" style="color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent)"><span data-zh="联系我索取简历" data-en="Contact me for résumé">联系我索取简历</span> ↗</a><small data-zh="市场方向 · 2027 校招" data-en="Marketing · 2027 Campus Recruitment">市场方向 · 2027 校招</small></div></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">冉佳佳 · 个人作品集 · 2026</div>
+  <div class="wrap foot-inner">
+    <span>◆ 冉佳佳 · Ran Jiajia · Portfolio · 2026</span>
+    <span data-zh="用数据看懂生意，用沟通推动落地" data-en="Read a business through data, drive it through communication">用数据看懂生意，用沟通推动落地</span>
+  </div>
 </footer>
 
 <div class="lightbox" id="lightbox"><span class="close" onclick="closeLB()">×</span><img id="lbimg" src="" alt=""></div>
 
 <script>
-/* ---------- accordion (work / intern / experience) ---------- */
+/* ---------- language toggle ---------- */
+(function(){
+  function applyLang(lang){
+    document.documentElement.lang = lang==='zh' ? 'zh-CN' : 'en';
+    document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+      var v=el.getAttribute('data-'+lang);
+      if(v!==null){ el.innerHTML=v; }
+    });
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.classList.toggle('on', b.getAttribute('data-lang')===lang);
+    });
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click',function(){ applyLang(this.getAttribute('data-lang')); });
+  });
+  window.__applyLang=applyLang;
+})();
+
+/* ---------- accordion ---------- */
 document.querySelectorAll('.acc-row').forEach(function(row){
   row.addEventListener('click',function(){
     var d=document.getElementById(this.getAttribute('data-target'));
@@ -687,16 +700,21 @@ function closeLB(){document.getElementById('lightbox').classList.remove('on');}
 document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
 
-/* ---------- nav active state ---------- */
-window.addEventListener('scroll',function(){
-  var pos=window.scrollY+80;
-  var links=document.querySelectorAll('.nav-links a');
-  document.querySelectorAll('section[id]').forEach(function(sec){
-    if(pos>=sec.offsetTop && pos<sec.offsetTop+sec.offsetHeight){
-      links.forEach(function(a){a.style.color = a.getAttribute('href')==='#'+sec.id ? 'var(--accent)' : '';});
-    }
-  });
-});
+/* ---------- scroll reveal ---------- */
+document.documentElement.classList.remove('no-js');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+}else{
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+}
+
+/* ---------- nav solid ---------- */
+var nav=document.getElementById('nav');
+function onScroll(){ nav.classList.toggle('solid', window.scrollY>60); }
+window.addEventListener('scroll',onScroll); onScroll();
 </script>
 </body>
 </html>
